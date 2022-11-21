@@ -1,7 +1,7 @@
 class CreateRecipeFoods < ActiveRecord::Migration[7.0]
   def change
     create_table :recipe_foods do |t|
-      t.integer :quantity
+      t.decimal :quantity
 
       t.timestamps
     end

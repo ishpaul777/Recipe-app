@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   resources :foods, only: [:index, :new, :create, :destroy]
   # defines the routes for the "recipes" page
   resources :recipes
-  # defines the routes for the "public_recipes" page
-  resources :public_recipes
+  # defines the routes for the "public_recipes" page having the public recipes
+  resources :recipes do
+    resources :shopping_lists
+    resources :recipe_foods, only: [:new, :create, :destroy]
+  end
 
-  # root to: "foods#index"
-  root 'foods#index'
-
+  root 'recipes#public'
+  get '/public_recipes', to: 'recipes#public', as: 'public_recipes'
 end

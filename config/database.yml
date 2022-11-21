@@ -16,19 +16,18 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  #username: postgres
-  #password: ishu207
+  username: postgres
+  password: ishu207
   host: localhost
   port: 5432
-  username: mvc
-  password: 123
+  # username: mvc
+  # password: 123
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: Recipe_development
-  #username: postgres
-  #password: ishu207
+
 
 
 

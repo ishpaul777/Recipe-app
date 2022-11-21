@@ -17,9 +17,6 @@
     <p class="alert"><%= alert %></p>
     <%# if user is signed in show %>
     <%# sign out button with turbo delete method %>
-    <% if signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path, data: { turbo: true, turbo_method: "delete" }, class: "btn btn-danger" %>
-    <% end %>
     <%= yield %>
   </body>
 </html>

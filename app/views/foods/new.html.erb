@@ -1,29 +1,18 @@
-<div class= "container d-flex flex-column">
-
-<%= form_with(model: @food) do |form| %>
-    <h1 class="py-5">New Food</h1>
-  
-  <div class="mb-3">
-    <%= form.label :name, style: "display: block", class: "form-label" %>
-    <%= form.text_field :name, class: "form-control", required: true  %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :units, style: "display: block", class: "form-label" %>
-    <%= form.text_field :units, class: "form-control", required: true  %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :price, style: "display: block", class: "form-label" %>
-    <%= form.text_field :price, class: "form-control", required: true  %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :quantity, style: "display: block", class: "form-label" %>
-    <%= form.text_field :quantity, class: "form-control", required: true  %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.submit "Save", class: "btn btn-primary btn-block" %>
-  </div>
-<% end %>
+<div class= "w-100 d-flex flex-column justify-content-center align-items-center" >
+	<h2>Add Food</h2>
+	<%= form_with model: @food, url: foods_path, class: 'form-group'  do |form| %>
+		<div class="field">
+		  <%= form.label :name, class:"form-label" %>
+		  <%= form.text_field :name, class:"form-control" %>
+		</div>
+		<div class="field">
+		  <%= form.label :units, class:"form-label mt-3 w-100" %>
+		  <%= form.select :units, [["grams"], ["kilos"], ["liters"], ["milliliters"]], {} , {class:"form-control w-100"} %>
+		</div>
+		<div class="field mt-3">
+		  <%= form.label :price, class:"form-label" %>
+		  <%= form.number_field :price, step: :any, class:"form-control" %>
+		</div>
+		<%= form.submit class: "btn btn-primary mt-3" %>
+	<% end %>
+</div>
