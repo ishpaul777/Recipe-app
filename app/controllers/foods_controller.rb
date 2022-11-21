@@ -26,9 +26,7 @@ class FoodsController < ApplicationController
     redirect_to foods_path
   end
 
-
   def food_params
     params.require(:food).permit(:name, :units, :price, :quantity)
   end
-
 end
