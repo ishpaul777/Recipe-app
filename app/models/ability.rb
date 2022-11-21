@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -14,15 +12,14 @@ class Ability
     # if user is admin then he can do anything
     if user.is? :admin
       can :manage, :all
-    else 
+    else
       # if user is default then
       # he can read all
       can :read, :all
       # he can create, and destroy his own foods
-      can [:create, :destroy], Food, user_id: user.id
+      can %i[create destroy], Food, user_id: user.id
       # he can create, and destroy his own recipes
-      can [:create, :destroy], Recipe, user_id: user.id
+      can %i[create destroy], Recipe, user_id: user.id
     end
-
   end
 end
