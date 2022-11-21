@@ -8,4 +8,11 @@ class User < ApplicationRecord
   
 	has_many :foods, dependent: :destroy
 	has_many :recipes, dependent: :destroy
+
+  # Every user is default user by default
+  Roles = [ :default, :admin ]
+
+  def is?( requested_role )
+    self.role == requested_role.to_s
+  end
 end

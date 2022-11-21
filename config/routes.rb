@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   resources :public_recipes
 
   # root to: "foods#index"
-  root to: "/foods"
+  root 'foods#index'
 
 end
