@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 #  define root root to sign in page
   
   # Defines the routes for the "foods" page
-  resources :foods
+  resources :foods, only: [:index, :new, :create, :destroy]
   # defines the routes for the "recipes" page
   resources :recipes
   # defines the routes for the "public_recipes" page
