@@ -1,0 +1,15 @@
+current directory: /home/looh16/Microverse/Module - 5/Recipe-app/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.14.0/ext/bootsnap
+/home/looh16/.rbenv/versions/3.1.2/bin/ruby -I /home/looh16/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20221121-10752-hdo1pm.rb extconf.rb
+creating Makefile
+
+current directory: /home/looh16/Microverse/Module - 5/Recipe-app/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.14.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /home/looh16/Microverse/Module - 5/Recipe-app/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.14.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/looh16/Microverse/Module - 5/Recipe-app/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.14.0/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20221121-10752-cq0pds/bootsnap

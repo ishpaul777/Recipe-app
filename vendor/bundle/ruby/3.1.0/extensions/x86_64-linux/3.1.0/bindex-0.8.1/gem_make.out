@@ -1,0 +1,15 @@
+current directory: /home/looh16/Microverse/Module - 5/Recipe-app/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+/home/looh16/.rbenv/versions/3.1.2/bin/ruby -I /home/looh16/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20221121-10752-w45tg3.rb extconf.rb
+creating Makefile
+
+current directory: /home/looh16/Microverse/Module - 5/Recipe-app/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /home/looh16/Microverse/Module - 5/Recipe-app/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/looh16/Microverse/Module - 5/Recipe-app/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20221121-10752-4xky6f/skiptrace/internal
