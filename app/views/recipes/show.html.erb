@@ -1,0 +1,48 @@
+<main class="w-100 d-flex flex-column  justify-content-center align-items-center align-items-center">
+  <div class="d-flex flex-column w-75">
+    <%= link_to 'Back', public_recipes_path, class: 'btn btn-primary align-self-start' %>
+    <div class="card my-4 w-100 mx-auto bg-dark text-light">
+      <div class="card-header text-center">
+        <h3> <strong> <%= @recipe.name %> </strong> </h3>
+      </div>
+      <div class="card-body bg-secondary">
+        <div class="row">
+          <div class="col-md-8">
+            <ul class="list-group bg-secondary text-dark">
+              <li class="list-group-item"><b>Preparation time:</b> <%= @recipe.preparation_time %></li>
+              <li class="list-group-item"><b>Cooking time:</b> <%= @recipe.cooking_time %></li>
+            </ul>
+            <h4 class="my-3"> Steps to follow:</h4>
+            <%= @recipe.description %>
+          </div>
+          <div class="col-md-4 d-flex flex-column">
+            <% if current_user.id == @recipe.user.id %>
+              <%= link_to recipe_path(@recipe), data: { turbo_method: "patch" } do %>
+                <div class="form-check form-switch align-self-end">
+                  <input type="checkbox" data-toggle="toggle" data-on="Public" data-off="Private" 
+									class="form-check-input" role="switch" id="flexSwitchCheckDefault" data-onstyle="success"
+									style="transform: scale(1.5); cursor: pointer;" data-offstyle="danger" data-size="sm" <%= @recipe.public ? "checked" : "" %>>
+                <% end %>
+                <label class="form-check-label text-light ml-1" for="flexSwitchCheckChecked" >Public</label>
+              <% end %>
+            </div>
+          </div>
+          <%
+=begin %>
+          <%if @recipe.user_id == current_user.id %>
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn btn-primary">
+                <%= link_to 'Generate Shopping List', new_shopping_list_path(recipe: @recipe.id),  {remote: true, 'data-bs-toggle' =>  "modal", 'data-bs-target' => '#modal-window'}  %>
+              </button>
+              <button type="button" class="btn btn-primary">
+                <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe) %>
+              </button>
+            </div>
+          <% end %>
+          <%
+=end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

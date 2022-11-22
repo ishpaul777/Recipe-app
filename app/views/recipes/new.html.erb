@@ -1,0 +1,31 @@
+<div class= "w-100 d-flex flex-column justify-content-center align-items-center" >
+	<h2>Add Recipe</h2>
+	<%= form_with model: @recipe, url: recipes_path, class: 'form-group w-25'  do |form| %>
+		<div class="field">
+		  <%= form.label :name, class:"form-label" %>
+		  <%= form.text_field :name, class:"form-control" %>
+		</div>
+		<div class="field mt-3">
+		  <%= form.label "#{:preparation_time} (hours)", class:"form-label" %>
+		  <%= form.number_field :preparation_time, step: :any, class:"form-control" %>
+		</div>
+		<div class="field mt-3">
+		  <%= form.label "#{:cooking_time} (hours)", class:"form-label" %>
+		  <%= form.number_field :cooking_time, step: :any, class:"form-control" %>
+		</div>
+		<div class="field">
+		  <%= form.label :description, class:"form-label" %>
+		  <%= form.text_area :description, class:"form-control" %>
+		</div>
+		  <div class="field mt-3">
+        <div class="custom-control custom-switch">
+        	<%= form.check_box :public, class: "custom-control-input", id: "public_recipe", checked_value: true, unchecked_value: false %>
+        	<label class="custom-control-label" for="public_recipe" 
+					style="transform: scale(1.4); cursor: pointer;">Public</label>
+        </div>
+      </div>
+		<div>
+		  <%= form.submit class: "btn btn-primary mt-3" %>
+		</div>
+	<% end %>
+</div>

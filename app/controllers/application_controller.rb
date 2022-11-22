@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
 
   before_action :update_allowed_parameters, if: :devise_controller?
 
-  def after_sign_out_path_for(resource_or_scope)
-     new_user_session_path
+  def after_sign_out_path_for(_resource_or_scope)
+    new_user_session_path
   end
 
   protected

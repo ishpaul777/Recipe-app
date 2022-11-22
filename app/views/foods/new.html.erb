@@ -1,13 +1,13 @@
 <div class= "w-100 d-flex flex-column justify-content-center align-items-center" >
 	<h2>Add Food</h2>
-	<%= form_with model: @food, url: foods_path, class: 'form-group'  do |form| %>
+	<%= form_with model: @food, url: foods_path, class: 'form-group w-25'  do |form| %>
 		<div class="field">
 		  <%= form.label :name, class:"form-label" %>
 		  <%= form.text_field :name, class:"form-control" %>
 		</div>
 		<div class="field">
 		  <%= form.label :units, class:"form-label mt-3 w-100" %>
-		  <%= form.select :units, [["grams"], ["kilos"], ["liters"], ["milliliters"]], {} , {class:"form-control w-100"} %>
+		  <%= form.select :units, [["grams"], ["kilos"], ["liters"], ["milliliters"]], {} , {class:"form-select w-100"} %>
 		</div>
 		<div class="field mt-3">
 		  <%= form.label :price, class:"form-label" %>
