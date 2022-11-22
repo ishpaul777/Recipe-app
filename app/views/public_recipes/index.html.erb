@@ -3,17 +3,24 @@
 <div class="d-flex flex-column w-50">
   <% @recipes.each do |recipe| %>
       <div class="container d-flex justify-content-between m-4 border">
-      <div class="d-flex">
-        <%= link_to recipe.name, recipe_path(recipe.id) %>
-      </div>
+        <div class="d-flex flex-column">
+          <%= link_to recipe.name, recipe_path(recipe.id) %>
+          <h5>By : <%= recipe.user.name %>
+        </div>
 
-        <span class="card-text fw-bold">Total food items: <%= recipe.recipe_foods.length %> </span
-        <% if can? :destroy, recipe %>
-          <%= button_to 'Remove',
-            recipe_path(recipe), method: :delete, class: "btn btn-danger
-            text-decoration-none" %> 
-          <% end %>
+          <div class="d-flex flex-column">
+          <h5>Total food items: <%= recipe.recipe_foods.length %> </h5>
+          <h5>Total Price: $: <%= price(recipe) %> </h5>
       </div>
+      <div class="d-flex flex-column">
+          <% if can? :destroy, recipe %>
+            <%= button_to 'Remove',
+              recipe_path(recipe), method: :delete, class: "btn btn-danger
+              text-decoration-none mt-2" %> 
+            <% end %>
+      </div>
+       </div>
+
   <% end %>
   </div>
 </main>
