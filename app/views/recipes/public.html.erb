@@ -1,29 +1,27 @@
 <main class="w-100 d-flex flex-column  justify-content-center align-items-center align-items-center">
-	<h2>Recipes</h2>
-	<div class="d-flex flex-column  w-50">
-  <% if can? :manage, Food %>
-		<%= link_to 'New Recipe', new_recipe_path, class: 'btn btn-primary mb-3 align-self-end' %>
-	<% end %>
-	<% if @recipes.empty? %>
-    <div class="alert alert-info">
+  <h2>Public Recipes</h2>
+  <div class="d-flex flex-column  w-50">
+    <% if @recipes.empty? %>
+      <div class="alert alert-info">
         <strong> No recipes found </strong>
-    </div>
-  <% else %>
-	<% @recipes.each do |recipe| %>
+      </div>
+    <% else %>
+      <% @recipes.each do |recipe| %>
         <div class="card mb-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4 d-flex flex-column align-items-center justify-content-between">
-                        <h3 class=""><%= link_to recipe.name, recipe_path(recipe), class: "text-decoration-none text-primary" %></h3>
-												<%= link_to 'Remove', recipe_path(recipe), data: { turbo_method: :delete }, class: 'btn btn-danger mt-2', style: 'height: fit-content;' %>
-                    </div>
-                    <div class="col-md-5">
-                        <p class="card-text"><%= recipe.description %></p>
-                    </div>
-                </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4 d-flex flex-column align-items-center justify-content-between">
+                <h3><%= link_to recipe.name, recipe_path(recipe), class: "text-decoration-none text-primary" %></h3>
+                <%= link_to 'Remove', recipe_path(recipe), data: { turbo_method: :delete }, class: 'btn btn-danger mt-2', style: 'height: fit-content;' %>
+              </div>
+              <div class="col-md-5">
+                <h5>Total food items: <%= recipe.recipe_foods.length %> </h5>
+                <h5>Total Price: $: <%= price(recipe) %> </h5>
+              </div>
             </div>
+          </div>
         </div>
-  <% end %>
-	<% end %>
-	</div>
+      <% end %>
+    <% end %>
+  </div>
 </main>

@@ -4,16 +4,16 @@ Rails.application.routes.draw do
 
 #  define root root to sign in page
 
-  # Defines the routes for the "foods" page
-  resources :foods
-  # defines the routes for the "recipes" page
-  resources :recipes
-  # defines the routes for the "public_recipes" page having the public recipes
-  resources :recipes do
-    resources :shopping_list
-    resources :recipe_foods, only: [:new, :create, :destroy]
-  end
+# Defines the routes for the "foods" page
+resources :foods
+# defines the routes for the "recipes" page
+resources :recipes
+# defines the routes for the "public_recipes" page having the public recipes
+resources :recipes do
+  resources :shopping_list
+  resources :recipe_foods, only: [:new, :create, :destroy]
+end
 
-  root "public_recipes#index"
-  resources :public_recipes, only: [:index]
+root "recipes#public"
+get "/public_recipes", to: "recipes#public", as: "public_recipes"
 end
