@@ -4,6 +4,7 @@
       <th scope="col">Food</th>
       <th scope="col">Units</th>
       <th scope="col">Unit Price</th>
+      <th scope="col">Quantity</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -13,6 +14,7 @@
       <td><%= food.name %></td>
       <td><%= food.units %></td>
       <td>$<%= food.price %></td>
+      <td><%= food.quantity %></td>
       <% if can? :manage, food %>
       <td>
         <%= link_to 'Destroy', food, data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-danger' %>

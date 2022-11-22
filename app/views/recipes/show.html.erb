@@ -19,7 +19,7 @@
             <% if current_user.id == @recipe.user.id %>
               <%= link_to recipe_path(@recipe), data: { turbo_method: "patch" } do %>
                 <div class="form-check form-switch align-self-end">
-                  <input type="checkbox" data-toggle="toggle" data-on="Public" data-off="Private" 
+                  <input type="checkbox" data-toggle="toggle" data-on="Public" data-off="Private"
 									class="form-check-input" role="switch" id="flexSwitchCheckDefault" data-onstyle="success"
 									style="transform: scale(1.5); cursor: pointer;" data-offstyle="danger" data-size="sm" <%= @recipe.public ? "checked" : "" %>>
                 <% end %>
@@ -27,40 +27,42 @@
               <% end %>
             </div>
           </div>
-          <%if @recipe.user_id == current_user.id %>
-            <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between">
+            <%= link_to 'Generate Shopping List', new_recipe_shopping_list_path(@recipe),  class: "btn text-light btn-primary" %>
+            <%if @recipe.user_id == current_user.id %>
               <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "btn text-light btn-primary" %>
-              <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "btn text-light btn-primary" %>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-    <table class="table table-striped">
-      <thead class="table-dark">
-        <tr>
-          <th scope="col">Food</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Units</th>
-          <th scope="col">Unit Price</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @recipe_foods.each do |rfood| %>
+      <table class="table table-striped w-75">
+        <thead class="table-dark">
           <tr>
-            <td><%= rfood.food.name %></td>
-            <td><%= rfood.quantity %></td>
-            <td><%= rfood.food.units %></td>
-            <td>$<%= rfood.food.price %></td>
-            <% if can? :manage, rfood %>
-              <td>
-                <%= link_to 'Destroy', "/recipes/#{@recipe.id}/recipe_foods/#{rfood.id}", data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-danger' %>
-              </td>
+            <th scope="col">Food</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Units</th>
+            <th scope="col">Unit Price</th>
+            <%if @recipe.user_id == current_user.id %>
+              <th scope="col">Actions</th>
             <% end %>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @recipe_foods.each do |rfood| %>
+            <tr>
+              <td><%= rfood.food.name %></td>
+              <td><%= rfood.quantity %></td>
+              <td><%= rfood.food.units %></td>
+              <td>$<%= rfood.food.price %></td>
+              <%if @recipe.user_id == current_user.id %>
+                <td>
+                  <%= link_to 'Destroy', "/recipes/#{@recipe.id}/recipe_foods/#{rfood.id}", data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-danger' %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
   </div>
 </main>
