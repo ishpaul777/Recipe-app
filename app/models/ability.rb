@@ -18,7 +18,6 @@ class Ability
     # # he can create, update and destroy his own foods
     # can [:create, :update, :destroy], Food, user_id: user.id
 
-    # return unless user.admin?
     # # if user is admin then
     # # he can do everything
     can :manage, :all
