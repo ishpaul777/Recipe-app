@@ -5,7 +5,7 @@
   <% if can? :manage, Food %>
 		<%= link_to 'New Food', new_food_path, class: 'btn btn-primary  mb-3' %>
 	<% end %>
-	<%= render 'shared/foods', locals: {foods: @foods} %>
+	<%= render 'shared/foods', locals: {foods: @foods } %>
 	<div>
 </main>
 
