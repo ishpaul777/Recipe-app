@@ -1,6 +1,6 @@
 <div class= "w-100 d-flex flex-column justify-content-center align-items-center" >
 	<h2>Add Food</h2>
-	<%= form_with model: @food, url: foods_path, class: 'form-group'  do |form| %>
+	<%= form_with model: @food, url: foods_path, class: 'form-group w-25'  do |form| %>
 		<div class="field">
 		  <%= form.label :name, class:"form-label" %>
 		  <%= form.text_field :name, class:"form-control" %>

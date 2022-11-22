@@ -12,12 +12,12 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     @food.user = current_user
-     
+
     if @food.save
-      flash[:notice] = "Food was successfully created."
+      flash[:notice] = 'Food was successfully created.'
       redirect_to foods_path
     else
-      flash[:notice] = "Food was not created."
+      flash[:notice] = 'Food was not created.'
       redirect_to new_food_path
     end
   end
@@ -27,8 +27,9 @@ class FoodsController < ApplicationController
     @food.destroy
     redirect_to foods_path
   end
-  
-  private 
+
+  private
+
   def food_params
     params.require(:food).permit(:name, :units, :price, :quantity)
   end

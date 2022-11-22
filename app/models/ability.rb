@@ -1,7 +1,7 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(_user)
     # guest user (not logged in)
     # can read public recepies and details
     # can :read, Recipe, public: true
