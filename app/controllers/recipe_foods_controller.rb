@@ -9,11 +9,10 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.recipe_id = Recipe.find(params[:recipe_id]).id
     if @recipe_food.save
       flash[:notice] = 'Recipe food was successfully created'
-      redirect_to recipe_path(@recipe_food.recipe_id)
     else
       flash[:alert] = 'Recipe food was not created'
-      redirect_to recipe_path(@recipe_food.recipe_id)
     end
+    redirect_to recipe_path(@recipe_food.recipe_id)
   end
 
   def destroy

@@ -77,4 +77,4 @@ group :test, :development do
   gem 'webdrivers'
 end
 
-gem "ruby-lsp", "~> 0.3.6", :group => :development
+gem 'ruby-lsp', '~> 0.3.6', group: :development
