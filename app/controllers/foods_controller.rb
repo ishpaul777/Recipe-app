@@ -18,7 +18,7 @@ class FoodsController < ApplicationController
       redirect_to foods_path
     else
       flash[:notice] = "Food was not created."
-      redirect_to foods_path
+      redirect_to new_food_path
     end
   end
 
