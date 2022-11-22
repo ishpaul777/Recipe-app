@@ -2,9 +2,15 @@
   <h2>Shopping list</h2>
   <div class="d-flex flex-column w-50">
     <div class="d-flex justify-content-between">
-      <h3>Total items: <%= @totalItems %></h3>
-      <h3>Total Price: <%= @totalPrice %></h3>
+      <h3>Total items:
+        <%= @totalItems %>
+      </h3>
+      <h3>Total Price:
+        <%= @totalPrice %>
+      </h3>
     </div>
+    <%# if shopping list is not empty %>
+  <% if !@shopping_list.empty? %>
   <table class="table table-striped m-3">
     <thead class="table-dark">
       <tr>
@@ -25,5 +31,10 @@
       <% end %>
     </tbody>
   </table>
+  <% else %>
+    <div class="alert alert-info">
+        <strong> it looks you got every thing already </strong>
+      </div>
+  <% end %>
   </div>
 </main>
