@@ -42,7 +42,7 @@
             <th scope="col">Food</th>
             <th scope="col">Quantity</th>
             <th scope="col">Units</th>
-            <th scope="col">Unit Price</th>
+            <th scope="col">Price</th>
             <%if @recipe.user_id == current_user.id %>
               <th scope="col">Actions</th>
             <% end %>
@@ -54,10 +54,11 @@
               <td><%= rfood.food.name %></td>
               <td><%= rfood.quantity %></td>
               <td><%= rfood.food.units %></td>
-              <td>$<%= rfood.food.price %></td>
+              <td>$<%= price(rfood.food) %></td>
               <%if @recipe.user_id == current_user.id %>
                 <td>
-                  <%= link_to 'Destroy', "/recipes/#{@recipe.id}/recipe_foods/#{rfood.id}", data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-danger' %>
+                  <%= link_to 'Edit', edit_recipe_recipe_food_path(@recipe, rfood), class: "btn btn-primary" %>
+                  <%= link_to 'Destroy', "/recipes/#{@recipe.id}/recipe_foods/#{rfood.id}", data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-danger ml-2' %>
                 </td>
               <% end %>
             </tr>

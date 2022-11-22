@@ -11,7 +11,7 @@ resources :recipes
 # defines the routes for the "public_recipes" page having the public recipes
 resources :recipes do
   resources :shopping_list
-  resources :recipe_foods, only: [:new, :create, :destroy]
+  resources :recipe_foods, only: [:new, :create, :destroy, :edit, :update]
 end
 
 root "recipes#public"

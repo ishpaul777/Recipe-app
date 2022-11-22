@@ -22,6 +22,21 @@ class RecipeFoodsController < ApplicationController
     redirect_to recipe_path(@recipe_food.recipe_id)
   end
 
+  def edit
+    @recipe_food = RecipeFood.find(params[:id])
+    @foods = Food.where(user_id: current_user.id)
+  end
+
+  def update
+    @recipe_food = RecipeFood.find(params[:id])
+    if @recipe_food.update(recipe_food_params)
+      flash[:notice] = 'Recipe food was successfully updated'
+    else
+      flash[:alert] = 'Recipe food was not updated'
+    end
+    redirect_to recipe_path(@recipe_food.recipe_id)
+  end
+
   private
 
   def recipe_food_params
