@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     resources :recipe_foods, only: [:new, :create, :destroy]
   end
 
-  root 'recipes#public'
-  get '/public_recipes', to: 'recipes#public', as: 'public_recipes'
+  root "public_recipes#index"
+  resources :public_recipes, only: [:index]
 end
