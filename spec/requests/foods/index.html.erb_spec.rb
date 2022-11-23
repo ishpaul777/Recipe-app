@@ -4,7 +4,7 @@ RSpec.describe 'Foods', type: :request do
   include Devise::Test::IntegrationHelpers
 
   let(:user) { User.create(name: 'Jhon', email: 'Jhon@mail.com', password: '123456') }
-  let(:food) { user.foods.create(name: 'Banana', measurement_unit: 'Kg', price: 20) }
+  let(:food) { user.foods.create(name: 'Banana', units: 'Kg', price: 20) }
 
   describe 'GET /index' do
     before do
