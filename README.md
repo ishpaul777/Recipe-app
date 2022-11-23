@@ -38,7 +38,13 @@ git clone https://github.com/ishpaul777/Recipe-app
 
 - GitHub: [@looh16](https://github.com/looh16)
 - Twitter: [@looh16](https://twitter.com/custodiolanga1)
-- LinkedIn: [@looh16](https://www.linkedin.com/in/custodio-serafim) 
+- LinkedIn: [@looh16](https://www.linkedin.com/in/custodio-serafim)
+
+👤 **Ishpaul Singh**
+
+- Github - [@ishpaul777](https://github.com/ishpaul777)
+- Twitter - [@ishpaul777](https://twitter.com/ishpaul777)
+- Linkedin - [Ishpaul Singh](https://www.linkedin.com/in/ishpaul777/)
 
 
 ## 🤝 Contributing
