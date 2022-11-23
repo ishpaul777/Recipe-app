@@ -15,6 +15,7 @@ gem 'pg', '~> 1.1'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
+gem 'ffi', '~> 1.15', '>= 1.15.5'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 
@@ -27,6 +28,7 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -41,6 +43,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
+
+gem 'cancancan'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -67,7 +71,10 @@ end
 group :test, :development do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara', '~> 3.38'
+  gem 'letter_opener'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'ruby-lsp', '~> 0.3.6', group: :development

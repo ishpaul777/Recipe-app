@@ -2,12 +2,12 @@ AllCops:
   NewCops: enable
   Exclude:
     - "db/**/*"
-    - "bin/*" 
+    - "bin/*"
     - "config/**/*"
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-    - "vendor/**/*" 
+    - "vendor/**/*"
 
   DisplayCopNames: true
 
@@ -16,12 +16,12 @@ Layout/LineLength:
 
 Naming/ConstantName:
   Enabled: false
-  
+
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
     - "app/models/*"
-  Max: 20
+  Max: 22
 Metrics/AbcSize:
   Include:
     - "app/controllers/*"

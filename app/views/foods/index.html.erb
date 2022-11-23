@@ -1,0 +1,11 @@
+<main class="d-flex flex-column justify-content-center align-items-center">
+	<%# link to create new food %>
+  <%# <% if can? :manage, @food %> 
+ <div class="w-75 flex-column d-flex justify-content-center align-items-end">
+  <% if can? :manage, Food %>
+		<%= link_to 'New Food', new_food_path, class: 'btn btn-primary  mb-3' %>
+	<% end %>
+	<%= render 'shared/foods', locals: {foods: @foods } %>
+	<div>
+</main>
+

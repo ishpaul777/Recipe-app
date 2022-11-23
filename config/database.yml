@@ -18,13 +18,17 @@ default: &default
   encoding: unicode
   username: postgres
   password: ishu207
+  host: localhost
+  port: 5432
+  # username: mvc
+  # password: 123
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: Recipe_development
-  username: postgres
-  password: ishu207
+
+
 
 
   # The specified database role being used to connect to postgres.
@@ -59,8 +63,9 @@ development:
 test:
   <<: *default
   database: Recipe_test
-  username: postgres
-  password: ishu207
+  #username: postgres
+  #password: ishu207
+
 
 
 # As with config/credentials.yml, you never want to store sensitive information,

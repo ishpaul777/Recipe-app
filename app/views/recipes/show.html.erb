@@ -1,0 +1,69 @@
+<main class="w-100 d-flex flex-column  justify-content-center align-items-center">
+  <div class="d-flex flex-column justify-content-center align-items-center w-75">
+    <%= link_to 'Back', public_recipes_path, class: 'btn btn-primary align-self-start' %>
+    <div class="card my-4 w-75 mx-auto bg-dark text-light">
+      <div class="card-header text-center">
+        <h3> <strong> <%= @recipe.name %> </strong> </h3>
+      </div>
+      <div class="card-body bg-secondary">
+        <div class="row">
+          <div class="col-md-8">
+            <ul class="list-group bg-secondary text-dark">
+              <li class="list-group-item"><b>Preparation time:</b> <%= @recipe.preparation_time %></li>
+              <li class="list-group-item"><b>Cooking time:</b> <%= @recipe.cooking_time %></li>
+            </ul>
+            <h4 class="my-3"> Steps to follow:</h4>
+            <%= @recipe.description %>
+          </div>
+          <div class="col-md-4 d-flex flex-column">
+            <% if current_user.id == @recipe.user.id %>
+              <%= link_to recipe_path(@recipe), data: { turbo_method: "patch" } do %>
+                <div class="form-check form-switch align-self-end">
+                  <input type="checkbox" data-toggle="toggle" data-on="Public" data-off="Private"
+									class="form-check-input" role="switch" id="flexSwitchCheckDefault" data-onstyle="success"
+									style="transform: scale(1.5); cursor: pointer;" data-offstyle="danger" data-size="sm" <%= @recipe.public ? "checked" : "" %>>
+                <% end %>
+                <label class="form-check-label text-light ml-1" for="flexSwitchCheckChecked" >Public</label>
+              <% end %>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <%= link_to 'Generate Shopping List', new_recipe_shopping_list_path(@recipe),  class: "btn text-light btn-primary" %>
+            <%if @recipe.user_id == current_user.id %>
+              <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "btn text-light btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+      <table class="table table-striped w-75">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Food</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Units</th>
+            <th scope="col">Price</th>
+            <%if @recipe.user_id == current_user.id %>
+              <th scope="col">Actions</th>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <% @recipe_foods.each do |rfood| %>
+            <tr>
+              <td><%= rfood.food.name %></td>
+              <td><%= rfood.quantity %></td>
+              <td><%= rfood.food.units %></td>
+              <td>$<%= price(rfood.food) %></td>
+              <%if @recipe.user_id == current_user.id %>
+                <td>
+                  <%= link_to 'Edit', edit_recipe_recipe_food_path(@recipe, rfood), class: "btn btn-primary" %>
+                  <%= link_to 'Destroy', "/recipes/#{@recipe.id}/recipe_foods/#{rfood.id}", data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-danger ml-2' %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</main>

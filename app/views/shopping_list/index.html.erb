@@ -1,0 +1,40 @@
+<main class="w-100 d-flex flex-column  justify-content-center align-items-center align-items-center">
+  <h2>Shopping list</h2>
+  <div class="d-flex flex-column w-50">
+    <div class="d-flex justify-content-between">
+      <h3>Total items:
+        <%= @total_items %>
+      </h3>
+      <h3>Total Price:
+        <%= @total_price %>
+      </h3>
+    </div>
+    <%# if shopping list is not empty %>
+  <% if !@shopping_list.empty? %>
+  <table class="table table-striped m-3">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Units</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shopping_list.each do |rfood| %>
+        <tr>
+          <td><%= rfood[:food] %></td>
+          <td><%= rfood[:price] %></td>
+          <td><%= rfood[:quantity] %></td>
+          <td><%= rfood[:units] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+    <div class="alert alert-info">
+        <strong> it looks you got every thing already </strong>
+      </div>
+  <% end %>
+  </div>
+</main>
