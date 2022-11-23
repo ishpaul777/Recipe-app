@@ -1,24 +1,67 @@
-# README
+# Receipe App.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Recipe app keeps track of all your recipes, ingredients and inventory. It will let you save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what's missing from a recipe. Also, since sharing recipes is an important part of cooking, the app can let you make them public so anyone can access them.
 
-Things you may want to cover:
 
-* Ruby version
+## Built With:
 
-* System dependencies
+- Ruby on Rails
+- Bootstrap
+- Ruby
 
-* Configuration
+To get a local copy up and running follow these simple steps.
 
-* Database creation
+## Getting Started
 
-* Database initialization
 
-* How to run the test suite
+### Prerequisites
+- Ruby
+- Postgresql
+- Ruby on Rails
 
-* Services (job queues, cache servers, search engines, etc.)
+## Setup
 
-* Deployment instructions
+### Clone this repository
+git clone https://github.com/ishpaul777/Recipe-app
 
-* ...
+
+### Run project
+- cd recipe-app
+- bundle install
+- rails db:setup
+- rails s
+
+
+## Authors
+
+👤 **Custodio Serafim**
+
+- GitHub: [@looh16](https://github.com/looh16)
+- Twitter: [@looh16](https://twitter.com/custodiolanga1)
+- LinkedIn: [@looh16](https://www.linkedin.com/in/custodio-serafim)
+
+👤 **Ishpaul Singh**
+
+- Github - [@ishpaul777](https://github.com/ishpaul777)
+- Twitter - [@ishpaul777](https://twitter.com/ishpaul777)
+- Linkedin - [Ishpaul Singh](https://www.linkedin.com/in/ishpaul777/)
+
+
+## 🤝 Contributing
+
+Contributions, [Issues](https://github.com/ishpaul777/Recipe-app/issues), and feature requests are welcome!
+
+Feel free to check the issues page.
+
+## Show your support
+Give a ⭐️ if you like this project!
+
+
+## Acknowledgments
+
+- [Microverse](https://www.microverse.org/)
+
+
+## 📝 License
+
+This project is [MIT](https://github.com/ishpaul777/Recipe-app/blob/views/LICENSE.md) licensed.
