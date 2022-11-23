@@ -5,7 +5,7 @@ RSpec.describe Recipe, type: :model do
     user = User.create(name: 'user', email: 'user@example.com', password: 'password')
     subject do
       Recipe.new(user_id: user, name: 'Chicken Masala', preparation_time: 1, cooking_time: 2,
-      description: 'It is a delicious meal')
+                 description: 'It is a delicious meal')
     end
     before { subject.save }
 

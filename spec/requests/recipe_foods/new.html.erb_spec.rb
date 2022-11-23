@@ -6,7 +6,7 @@ RSpec.describe 'recipe_foods', type: :request do
   let(:user) { User.create(name: 'Jhon', email: 'Jhon@mail.com', password: '123456') }
   let(:food) { user.foods.create(name: 'Banana', units: 'Kg', price: 20) }
   let(:recipe) do
-    user.recipes.create(name: 'cake', preparation_time: 1, cooking_time: 10, description: 'cake', public: true,
+    user.recipes.create(name: 'cake', preparation_time: 1, cooking_time: 10, description: 'cake taste', public: true,
                         user_id: user.id)
   end
 
