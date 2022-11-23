@@ -6,4 +6,7 @@ class Food < ApplicationRecord
   validates :units, presence: true
 
   validates :price, presence: true, numericality: { only_numeric: true, greater_than: 0 }
+  validates :units, length: { maximum: 20 }
+  validates :name, length: { maximum: 50 }
+  validates :quantity, numericality: { only_numeric: true, greater_than: 0 }
 end
