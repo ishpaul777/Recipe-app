@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Units</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.units %></td>
+      <td>$<%= food.price %></td>
+      <td><%= food.quantity %></td>
+      <% if can? :manage, food %>
+      <td>
+        <%= link_to 'Destroy', food, data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-danger' %>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
