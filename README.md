@@ -32,7 +32,7 @@ git clone https://github.com/ishpaul777/Recipe-app
 - rails s
 
 
-## Author
+## Authors
 
 👤 **Custodio Serafim**
 
