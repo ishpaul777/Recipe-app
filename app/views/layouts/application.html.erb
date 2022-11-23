@@ -11,11 +11,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
     <%= render "shared/navbar" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="notce alert-info">
+      <strong> <%= notice %> </strong>
+    </div>
+    <div class="alert alert-info">
+      <strong> <%= alert %> </strong>
+    </div>
     <%# if user is signed in show %>
     <%# sign out button with turbo delete method %>
     <%= yield %>
