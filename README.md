@@ -26,11 +26,15 @@ git clone https://github.com/ishpaul777/Recipe-app
 
 
 ### Run project
-- cd recipe-app
-- bundle install
-- rails db:setup
-- rails s
+```bash
+$ cd recipe-app
 
+$ bundle install
+
+$ rails db:setup
+
+$ rails s
+```
 
 ## Authors
 
